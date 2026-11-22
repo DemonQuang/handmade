@@ -1,0 +1,27 @@
+{
+  "name": "luna-handmade-monorepo",
+  "version": "1.0.0",
+  "description": "Luna Handmade - Craftfolio Creator Storefront Platform (Fullstack React & Express TypeScript)",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix BE install && npm --prefix FE install",
+    "build:all": "npm --prefix BE run build && npm --prefix FE run build",
+    "test:be": "npm --prefix BE test",
+    "dev:be": "npm --prefix BE run dev",
+    "dev:fe": "npm --prefix FE run dev",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f"
+  },
+  "keywords": [
+    "handmade",
+    "storefront",
+    "link-in-bio",
+    "react",
+    "typescript",
+    "express"
+  ],
+  "author": "Luna Handmade",
+  "license": "ISC"
+}

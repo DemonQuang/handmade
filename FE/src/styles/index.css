@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-galaxy-bg: #05050b;
+  --color-galaxy-wine: #c9184a;
+  --color-galaxy-purple: #7209b7;
+  --color-galaxy-blue: #0077b6;
+  --color-galaxy-neon: #00b4d8;
+  --color-wine-red: #72092c;
+  --color-crimson-glow: #c9184a;
+  --color-nebula-purple: #4a0e4e;
+  --color-ultraviolet: #7b2cbf;
+  --color-cosmic-blue: #0d1b4a;
+  --color-electric-cyan: #00b4d8;
+  --color-stardust-gold: #ffe066;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+@layer base {
+  html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #05050b;
+    color: #F8FAFC;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-sans);
+  }
+  .pb-safe { 
+    padding-bottom: env(safe-area-inset-bottom, 20px); 
+  }
+  .pt-safe { 
+    padding-top: env(safe-area-inset-top, 16px); 
+  }
+}
+
+/* Hide scrollbars across browsers */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom glowing effects from DESIGN.md */
+.nebula-mesh {
+  background: 
+    radial-gradient(ellipse at 15% 10%, rgba(168, 18, 66, 0.45) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 15%, rgba(13, 27, 74, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 45%, rgba(74, 14, 78, 0.50) 0%, transparent 65%),
+    radial-gradient(ellipse at 85% 75%, rgba(114, 9, 44, 0.40) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 85%, rgba(26, 58, 143, 0.45) 0%, transparent 60%),
+    #05050b;
+}
+
+@keyframes floatStar {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-4px) scale(1.15);
+    opacity: 1;
+  }
+}
+
+.animate-float-star {
+  animation: floatStar 3.5s ease-in-out infinite;
+}
